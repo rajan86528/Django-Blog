@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+
+{% block cotent %}
+
+<h1>Login</h1>
+<form action="" method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" value="Login">
+    <small><p><a href="{% url 'password_reset' %}">Forgot Password?</a></p></small>
+</form>
+
+{% endblock cotent %}

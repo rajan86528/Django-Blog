@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block cotent %}
+    <form action="" method="POST">
+        <h1>Create Post</h1>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <br />
+        <input type="submit" value="Post" class="btn btn-primary" />
+    </form>
+    <br />
+    <br />
+{% endblock cotent %}

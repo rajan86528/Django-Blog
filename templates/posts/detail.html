@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+
+{% block cotent %}
+
+<h1>{{post.title}}</h1>
+<small>
+    <b>Published on {{post.created_at}}</b>
+</small>
+<p>{{post.body}}</p>
+{% if user.is_authenticated %}
+<form action="{% url 'delete_post' post.pk %}" method="post">
+    {% csrf_token %}
+
+    <input type="submit" value="Delete Post">
+</form>
+{% endif %}
+
+
+{% endblock cotent %}
